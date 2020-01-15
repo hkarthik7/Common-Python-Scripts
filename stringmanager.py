@@ -17,17 +17,13 @@ StringManager class have multiple functionalities. They are -
     5. Find the synonyms for meaningful word.
         E.g. Synonym for "cab" is taxi.
 
-## PREREQUISITES : This script requires PyDictionary to be installed to
-successfully import and work with it which helps to find the synonyms
-of the word.
-TIP : Run --> pip install PyDictionary before running the script.
-Once done the StringManager class can be instantiated.
 @author: Harish Karthic
 """
 # Import necessary libraries
 import random
 import math
-from PyDictionary import PyDictionary
+import requests
+from bs4 import BeautifulSoup
 
 # Creating string manager class
 
@@ -103,5 +99,22 @@ class StringManager():
         self.string = string
 
         # Getting meaning of given string
-        dictionary = PyDictionary()
-        return dictionary.meaning(self.string)
+        method = "get"
+        uri = f"https://www.synonym.com/synonyms/{self.string}"
+        response = requests.request(method,uri)
+        contents = response.content
+        soup = BeautifulSoup(contents, "html.parser")
+        title = str(soup.title.parent)
+        synonyms_index = title.find(" synonyms: ")
+        antonyms_index = title.find("antonyms")
+        synonyms = title[synonyms_index:(antonyms_index-2)]
+        synonyms = synonyms.split(",")
+        
+        synonyms_list = []
+        for word in synonyms:
+            if ":" in word:
+                synonyms_list.append(word.split(":")[1])
+            else:
+                synonyms_list.append(word)
+    
+        return synonyms_list[0:10]
