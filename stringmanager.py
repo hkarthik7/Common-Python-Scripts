@@ -17,11 +17,17 @@ StringManager class have multiple functionalities. They are -
     5. Find the synonyms for meaningful word.
         E.g. Synonym for "cab" is taxi.
 
+## PREREQUISITES : This script requires PyDictionary to be installed to
+successfully import and work with it which helps to find the synonyms
+of the word.
+TIP : Run --> pip install PyDictionary before running the script.
+Once done the StringManager class can be instantiated.
 @author: Harish Karthic
 """
 # Import necessary libraries
 import random
 import math
+import PyDictionary
 from PyDictionary import PyDictionary
 
 # Creating string manager class
