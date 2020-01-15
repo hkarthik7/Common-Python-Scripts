@@ -27,7 +27,6 @@ Once done the StringManager class can be instantiated.
 # Import necessary libraries
 import random
 import math
-import PyDictionary
 from PyDictionary import PyDictionary
 
 # Creating string manager class
