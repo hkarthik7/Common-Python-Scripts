@@ -88,6 +88,7 @@ class CredentialManager:
 
         file = open(self.file, "w+")
         file.write(json.dumps(self.credentials))
+        file.close()
 
         return f"Credentials are saved in given path {self.file}"
 
