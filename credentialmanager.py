@@ -1,3 +1,11 @@
+'''
+Credential Manager script to work with credentials.
+
+@author: Harish Karthic
+@date: 17/01/2020
+'''
+
+
 class CredentialManager:
 
     '''
