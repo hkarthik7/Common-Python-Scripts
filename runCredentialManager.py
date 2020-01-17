@@ -1,4 +1,4 @@
-from credential_manager import CredentialManager
+from credentialmanager import CredentialManager
 
 cred_man = CredentialManager()
 
