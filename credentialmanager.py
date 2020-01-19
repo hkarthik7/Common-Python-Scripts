@@ -6,7 +6,7 @@ Credential Manager script to work with credentials.
 '''
 
 
-class CredentialManager:
+class CredentialManager():
 
     '''
     Credential Manager to generate random password, encrypt and
