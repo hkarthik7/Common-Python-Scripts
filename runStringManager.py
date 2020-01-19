@@ -27,8 +27,10 @@ print(f"List of all possible word combinations : ")
 print(permuted_words)
 
 # Prints the synonyms of the words/string
+
+
 def synonyms(words):
-    
+
     word_list = []
     for word in words:
         word_list.append(f"{word} :: {string_manager.get_synonyms(word)}")
