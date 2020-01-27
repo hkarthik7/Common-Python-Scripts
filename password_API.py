@@ -3,6 +3,7 @@
    and returns a dictionary with number of times the passwords
    are hacked. 
    Suggests a strong password which is unhacked.
+   HOW TO RUN : password_API.py password123 ioiehkjwnddh test@123
 """
 
 import requests
