@@ -5,6 +5,8 @@ Credential Manager script to work with credentials.
 @date: 17/01/2020
 '''
 
+import os, random, json
+
 
 class CredentialManager():
 
@@ -28,7 +30,6 @@ class CredentialManager():
         '''
 
         self.password_length = password_length
-        import random
 
         chars = list(map(chr, range(33, 123)))
         password = ""
@@ -66,7 +67,6 @@ class CredentialManager():
 
     def default_credentials(self):
 
-        import os
         user_name = os.getlogin()
 
         result = {
@@ -84,7 +84,6 @@ class CredentialManager():
 
         self.file = file
         self.credentials = credentials
-        import json
 
         file = open(self.file, "w+")
         file.write(json.dumps(self.credentials))
