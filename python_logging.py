@@ -3,6 +3,8 @@ dynamically. This module can be used as it is by instantiating the
 CustomLogger class.
 """
 
+import datetime, json
+
 
 class CustomLogger():
 
@@ -15,8 +17,7 @@ class CustomLogger():
         All the progresses are printed in the console
         and can be divered to a log file.
         """
-        import datetime
-
+        
         self.log_level = log_level
         self.message = message
 
@@ -36,8 +37,6 @@ class CustomLogger():
         information are returned and printed in JSON
         format.
         """
-        import datetime
-        import json
 
         self.log_level = log_level
         self.message = message
